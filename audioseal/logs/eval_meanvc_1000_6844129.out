@@ -1,0 +1,199 @@
+================================================================================
+  MeanVC2 + AudioSeal 1,000-Sample Benchmark Job Started: 2026年  9月 17日 木曜日 07:45:34 JST
+================================================================================
+Job ID:            6844129
+Node:              b0034
+Directory:         /home/pj25001109/ku60000344/projects/MeanVC2/audioseal
+SIF Image:         /home/pj25001109/ku60000344/latest.sif
+Python:            /home/pj25001109/ku60000344/miniconda3/envs/meanvc/bin/python
+================================================================================
+====================================================================================================
+  MeanVC2 (Streaming VC) + AudioSeal (Real-time Watermark) Benchmark
+====================================================================================================
+Device:             cuda
+MeanVC2 Model:      40ms
+Watermark Alpha:    1.0
+Target Speaker:     /home/pj25001109/ku60000344/projects/MeanVC2/test_audio/common_voice_en_10119832.wav
+Dataset Dir:        /home/pj25001109/ku60000344/dataset/libriTTS/LibriTTS/train-clean-100
+Num Samples:        1000
+Save Audio Count:   50
+Output Directory:   /home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000
+----------------------------------------------------------------------------------------------------
+[Pipeline] Initializing MeanVC2 Streaming VCRunner...
+[Init] Loading ASR encoder (JIT)...
+[Init] Loading VC model...
+[VC] Total parameters: 17,748,688
+[Init] Loading vocoder...
+[Init] Loading speaker model...
+[Init] Extracting target speaker embedding from: /home/pj25001109/ku60000344/projects/MeanVC2/test_audio/common_voice_en_10119832.wav
+[Init] Speaker embedding shape: torch.Size([1, 256])
+[Pipeline] Initializing AudioSeal streaming watermarker on cuda...
+[AudioSeal] Loading streaming generator: audioseal_wm_streaming on cuda...
+[AudioSeal] Loading streaming detector: audioseal_detector_streaming on cuda...
+[Pipeline] Pre-extracting target speaker embedding...
+[Pipeline] Initializing 21 robustness attack functions...
+[Dataset] Scanning for .wav files in: /home/pj25001109/ku60000344/dataset/libriTTS/LibriTTS/train-clean-100 ...
+[Dataset] Found 33236 candidate files. Filtering for [2.0s, 10.0s]...
+[Dataset] Successfully selected 1000 samples for evaluation.
+[Pipeline] Found 0 already completed samples. Resuming from checkpoint...
+[0010/1000] Dur: 5.84s | Clean WM Bit Acc: 100.0% | PESQ: 3.870 | SNR: 21.1dB | SIM: 0.631->0.625
+[0020/1000] Dur: 2.75s | Clean WM Bit Acc: 100.0% | PESQ: 3.898 | SNR: 21.2dB | SIM: 0.644->0.638
+[0030/1000] Dur: 2.73s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.2dB | SIM: 0.637->0.631
+[0040/1000] Dur: 7.42s | Clean WM Bit Acc: 100.0% | PESQ: 3.903 | SNR: 21.3dB | SIM: 0.638->0.634
+[0050/1000] Dur: 2.06s | Clean WM Bit Acc: 100.0% | PESQ: 3.909 | SNR: 21.4dB | SIM: 0.641->0.638
+[0060/1000] Dur: 2.94s | Clean WM Bit Acc: 100.0% | PESQ: 3.899 | SNR: 21.3dB | SIM: 0.643->0.640
+[0070/1000] Dur: 3.39s | Clean WM Bit Acc: 100.0% | PESQ: 3.895 | SNR: 21.3dB | SIM: 0.644->0.643
+[0080/1000] Dur: 8.49s | Clean WM Bit Acc: 100.0% | PESQ: 3.890 | SNR: 21.3dB | SIM: 0.646->0.644
+[0090/1000] Dur: 7.02s | Clean WM Bit Acc: 100.0% | PESQ: 3.883 | SNR: 21.3dB | SIM: 0.644->0.642
+[0100/1000] Dur: 3.32s | Clean WM Bit Acc: 100.0% | PESQ: 3.886 | SNR: 21.3dB | SIM: 0.643->0.640
+[0110/1000] Dur: 2.06s | Clean WM Bit Acc: 100.0% | PESQ: 3.876 | SNR: 21.3dB | SIM: 0.645->0.642
+[0120/1000] Dur: 4.60s | Clean WM Bit Acc: 100.0% | PESQ: 3.879 | SNR: 21.2dB | SIM: 0.644->0.641
+[0130/1000] Dur: 4.60s | Clean WM Bit Acc: 100.0% | PESQ: 3.879 | SNR: 21.2dB | SIM: 0.645->0.642
+[0140/1000] Dur: 8.59s | Clean WM Bit Acc: 100.0% | PESQ: 3.876 | SNR: 21.1dB | SIM: 0.647->0.643
+[0150/1000] Dur: 3.96s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.2dB | SIM: 0.644->0.640
+[0160/1000] Dur: 6.77s | Clean WM Bit Acc: 100.0% | PESQ: 3.885 | SNR: 21.2dB | SIM: 0.643->0.639
+[0170/1000] Dur: 5.65s | Clean WM Bit Acc: 100.0% | PESQ: 3.885 | SNR: 21.2dB | SIM: 0.643->0.639
+[0180/1000] Dur: 7.51s | Clean WM Bit Acc: 100.0% | PESQ: 3.883 | SNR: 21.3dB | SIM: 0.642->0.639
+[0190/1000] Dur: 6.71s | Clean WM Bit Acc: 100.0% | PESQ: 3.886 | SNR: 21.3dB | SIM: 0.642->0.639
+[0200/1000] Dur: 6.88s | Clean WM Bit Acc: 100.0% | PESQ: 3.885 | SNR: 21.3dB | SIM: 0.642->0.639
+[0210/1000] Dur: 8.43s | Clean WM Bit Acc: 100.0% | PESQ: 3.885 | SNR: 21.3dB | SIM: 0.643->0.640
+[0220/1000] Dur: 6.65s | Clean WM Bit Acc: 100.0% | PESQ: 3.883 | SNR: 21.3dB | SIM: 0.644->0.641
+[0230/1000] Dur: 5.47s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.644->0.641
+[0240/1000] Dur: 2.44s | Clean WM Bit Acc: 100.0% | PESQ: 3.879 | SNR: 21.3dB | SIM: 0.643->0.641
+[0250/1000] Dur: 6.69s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.4dB | SIM: 0.644->0.641
+[0260/1000] Dur: 3.07s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.4dB | SIM: 0.643->0.640
+[0270/1000] Dur: 5.88s | Clean WM Bit Acc: 100.0% | PESQ: 3.878 | SNR: 21.4dB | SIM: 0.645->0.642
+[0280/1000] Dur: 5.18s | Clean WM Bit Acc: 100.0% | PESQ: 3.877 | SNR: 21.4dB | SIM: 0.645->0.642
+[0290/1000] Dur: 5.26s | Clean WM Bit Acc: 100.0% | PESQ: 3.876 | SNR: 21.4dB | SIM: 0.644->0.641
+[0300/1000] Dur: 9.85s | Clean WM Bit Acc: 100.0% | PESQ: 3.876 | SNR: 21.3dB | SIM: 0.644->0.641
+[0310/1000] Dur: 2.91s | Clean WM Bit Acc: 100.0% | PESQ: 3.874 | SNR: 21.3dB | SIM: 0.644->0.642
+[0320/1000] Dur: 2.73s | Clean WM Bit Acc: 100.0% | PESQ: 3.875 | SNR: 21.4dB | SIM: 0.644->0.641
+[0330/1000] Dur: 2.02s | Clean WM Bit Acc: 100.0% | PESQ: 3.875 | SNR: 21.4dB | SIM: 0.645->0.643
+[0340/1000] Dur: 3.70s | Clean WM Bit Acc: 100.0% | PESQ: 3.874 | SNR: 21.3dB | SIM: 0.645->0.642
+[0350/1000] Dur: 5.36s | Clean WM Bit Acc: 100.0% | PESQ: 3.874 | SNR: 21.3dB | SIM: 0.645->0.642
+[0360/1000] Dur: 9.08s | Clean WM Bit Acc: 100.0% | PESQ: 3.875 | SNR: 21.3dB | SIM: 0.644->0.641
+[0370/1000] Dur: 8.69s | Clean WM Bit Acc: 100.0% | PESQ: 3.874 | SNR: 21.3dB | SIM: 0.645->0.642
+[0380/1000] Dur: 4.70s | Clean WM Bit Acc: 100.0% | PESQ: 3.875 | SNR: 21.3dB | SIM: 0.645->0.642
+[0390/1000] Dur: 5.09s | Clean WM Bit Acc: 100.0% | PESQ: 3.875 | SNR: 21.3dB | SIM: 0.644->0.641
+[0400/1000] Dur: 7.27s | Clean WM Bit Acc: 100.0% | PESQ: 3.876 | SNR: 21.3dB | SIM: 0.644->0.641
+[0410/1000] Dur: 2.10s | Clean WM Bit Acc: 100.0% | PESQ: 3.877 | SNR: 21.3dB | SIM: 0.645->0.642
+[0420/1000] Dur: 5.69s | Clean WM Bit Acc: 100.0% | PESQ: 3.877 | SNR: 21.3dB | SIM: 0.645->0.642
+[0430/1000] Dur: 4.29s | Clean WM Bit Acc: 100.0% | PESQ: 3.875 | SNR: 21.3dB | SIM: 0.645->0.642
+[0440/1000] Dur: 8.15s | Clean WM Bit Acc: 100.0% | PESQ: 3.875 | SNR: 21.3dB | SIM: 0.645->0.642
+[0450/1000] Dur: 2.68s | Clean WM Bit Acc: 100.0% | PESQ: 3.877 | SNR: 21.3dB | SIM: 0.645->0.642
+[0460/1000] Dur: 5.66s | Clean WM Bit Acc: 100.0% | PESQ: 3.875 | SNR: 21.3dB | SIM: 0.645->0.642
+[0470/1000] Dur: 4.54s | Clean WM Bit Acc: 100.0% | PESQ: 3.877 | SNR: 21.3dB | SIM: 0.645->0.642
+[0480/1000] Dur: 8.53s | Clean WM Bit Acc: 100.0% | PESQ: 3.877 | SNR: 21.3dB | SIM: 0.645->0.642
+[0490/1000] Dur: 4.72s | Clean WM Bit Acc: 100.0% | PESQ: 3.878 | SNR: 21.3dB | SIM: 0.645->0.642
+[0500/1000] Dur: 7.78s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.2dB | SIM: 0.645->0.642
+[0510/1000] Dur: 2.60s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.2dB | SIM: 0.645->0.642
+[0520/1000] Dur: 3.56s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.2dB | SIM: 0.645->0.642
+[0530/1000] Dur: 2.67s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.645->0.642
+[0540/1000] Dur: 3.25s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.3dB | SIM: 0.645->0.642
+[0550/1000] Dur: 2.56s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.645->0.642
+[0560/1000] Dur: 5.03s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.645->0.642
+[0570/1000] Dur: 9.69s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.646->0.643
+[0580/1000] Dur: 6.49s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.646->0.643
+[0590/1000] Dur: 3.16s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.646->0.643
+[0600/1000] Dur: 4.55s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.646->0.643
+[0610/1000] Dur: 3.71s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.646->0.643
+[0620/1000] Dur: 5.45s | Clean WM Bit Acc: 100.0% | PESQ: 3.883 | SNR: 21.3dB | SIM: 0.646->0.643
+[0630/1000] Dur: 2.34s | Clean WM Bit Acc: 100.0% | PESQ: 3.883 | SNR: 21.3dB | SIM: 0.645->0.642
+[0640/1000] Dur: 7.31s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.645->0.642
+[0650/1000] Dur: 3.46s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.645->0.642
+[0660/1000] Dur: 5.75s | Clean WM Bit Acc: 100.0% | PESQ: 3.883 | SNR: 21.3dB | SIM: 0.645->0.642
+[0670/1000] Dur: 5.72s | Clean WM Bit Acc: 100.0% | PESQ: 3.883 | SNR: 21.3dB | SIM: 0.645->0.642
+[0680/1000] Dur: 2.58s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.2dB | SIM: 0.645->0.642
+[0690/1000] Dur: 3.38s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.645->0.642
+[0700/1000] Dur: 6.67s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.2dB | SIM: 0.644->0.642
+[0710/1000] Dur: 8.89s | Clean WM Bit Acc: 100.0% | PESQ: 3.883 | SNR: 21.3dB | SIM: 0.644->0.642
+[0720/1000] Dur: 9.30s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.644->0.641
+[0730/1000] Dur: 2.16s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.644->0.641
+[0740/1000] Dur: 2.95s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.644->0.641
+[0750/1000] Dur: 8.34s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.644->0.641
+[0760/1000] Dur: 6.41s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.644->0.641
+[0770/1000] Dur: 6.51s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.643->0.641
+[0780/1000] Dur: 4.36s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.643->0.641
+[0790/1000] Dur: 5.57s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.644->0.641
+[0800/1000] Dur: 5.38s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.643->0.641
+[0810/1000] Dur: 3.93s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.643->0.641
+[0820/1000] Dur: 6.25s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.644->0.641
+[0830/1000] Dur: 3.40s | Clean WM Bit Acc: 100.0% | PESQ: 3.882 | SNR: 21.3dB | SIM: 0.644->0.641
+[0840/1000] Dur: 3.97s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.644->0.642
+[0850/1000] Dur: 6.79s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.644->0.641
+[0860/1000] Dur: 6.02s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.643->0.641
+[0870/1000] Dur: 2.96s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.643->0.640
+[0880/1000] Dur: 6.97s | Clean WM Bit Acc: 100.0% | PESQ: 3.879 | SNR: 21.3dB | SIM: 0.643->0.641
+[0890/1000] Dur: 8.60s | Clean WM Bit Acc: 100.0% | PESQ: 3.879 | SNR: 21.3dB | SIM: 0.643->0.641
+[0900/1000] Dur: 4.25s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.3dB | SIM: 0.643->0.641
+[0910/1000] Dur: 7.74s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.3dB | SIM: 0.643->0.640
+[0920/1000] Dur: 2.31s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.3dB | SIM: 0.643->0.640
+[0930/1000] Dur: 7.66s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.3dB | SIM: 0.643->0.640
+[0940/1000] Dur: 5.13s | Clean WM Bit Acc: 100.0% | PESQ: 3.881 | SNR: 21.3dB | SIM: 0.642->0.640
+[0950/1000] Dur: 9.46s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.3dB | SIM: 0.642->0.640
+[0960/1000] Dur: 2.12s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.3dB | SIM: 0.642->0.639
+[0970/1000] Dur: 7.14s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.3dB | SIM: 0.642->0.640
+[0980/1000] Dur: 2.41s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.3dB | SIM: 0.642->0.639
+[0990/1000] Dur: 8.25s | Clean WM Bit Acc: 100.0% | PESQ: 3.880 | SNR: 21.3dB | SIM: 0.642->0.639
+[1000/1000] Dur: 2.92s | Clean WM Bit Acc: 100.0% | PESQ: 3.879 | SNR: 21.3dB | SIM: 0.642->0.639
+
+[Aggregating] Computing overall ROC-AUC, TPR@0.1% FPR, and summarizing report...
+
+=============================================================================================================================
+  Benchmark Validation Report (Model / Evaluation Target: MeanVC2-40ms + AudioSeal (1000 LibriTTS train-clean))
+=============================================================================================================================
+Attack Type                      | Detect ACC  | Det ROC-AUC | Det TPR@0.1% | WM Bit Acc  | WM ROC-AUC  | WM TPR@0.1% 
+-----------------------------------------------------------------------------------------------------------------------------
+Clean (Identity)                 | 1.0000      | 1.0000      | 1.0000       | 1.0000      | 1.0000      | 1.0000      
+Gaussian Noise                   | 1.0000      | 1.0000      | 1.0000       | 1.0000      | 1.0000      | 1.0000      
+Pink Noise                       | 1.0000      | 1.0000      | 1.0000       | 1.0000      | 1.0000      | 1.0000      
+Lowpass Filter (5k)              | 1.0000      | 1.0000      | 1.0000       | 1.0000      | 1.0000      | 1.0000      
+Highpass Filter (500)            | 1.0000      | 1.0000      | 1.0000       | 1.0000      | 1.0000      | 1.0000      
+Bandpass Filter                  | 1.0000      | 1.0000      | 1.0000       | 1.0000      | 1.0000      | 1.0000      
+Echo/Reverb                      | 1.0000      | 1.0000      | 1.0000       | 1.0000      | 1.0000      | 1.0000      
+Smooth (Moving Avg)              | 1.0000      | 1.0000      | 1.0000       | 0.9066      | 0.9613      | 0.3444      
+Resampling (32k-16k)             | 1.0000      | 1.0000      | 1.0000       | 1.0000      | 1.0000      | 1.0000      
+Volume Boost (+10%)              | 1.0000      | 1.0000      | 1.0000       | 1.0000      | 1.0000      | 1.0000      
+Volume Duck (-10%)               | 1.0000      | 1.0000      | 1.0000       | 1.0000      | 1.0000      | 1.0000      
+Speed (0.8x-1.2x)                | 1.0000      | 1.0000      | 1.0000       | 0.5711      | 0.6125      | 0.0122      
+DSP Avg.                         | 1.0000      | 1.0000      | 1.0000       | 0.9565      | 0.9645      | 0.8631      
+-----------------------------------------------------------------------------------------------------------------------------
+Encodec        3 kbps            | 0.9785      | 0.9997      | 0.9900       | 0.5169      | 0.5296      | 0.0014      
+               6 kbps            | 0.9985      | 1.0000      | 1.0000       | 0.5321      | 0.5467      | 0.0085      
+               12 kbps           | 0.9995      | 1.0000      | 1.0000       | 0.5363      | 0.5620      | 0.0133      
+
+DAC            6 kbps            | 0.5000      | 0.7909      | 0.0020       | 0.4992      | 0.5028      | 0.0023      
+               8 kbps            | 0.5000      | 0.9750      | 0.5050       | 0.6571      | 0.7231      | 0.0271      
+               24 kbps           | 0.5550      | 0.9961      | 0.8740       | 0.5051      | 0.5151      | 0.0005      
+
+SNAC           0.98 kbps         | 0.5000      | 0.6267      | 0.0010       | 0.5032      | 0.5004      | 0.0014      
+               1.9 kbps          | 0.5000      | 0.6605      | 0.0000       | 0.5000      | 0.5010      | 0.0011      
+               2.6 kbps          | 0.5000      | 0.6800      | 0.0040       | 0.5096      | 0.5074      | 0.0016      
+Codec Avg.                       | 0.6702      | 0.8588      | 0.4862       | 0.5288      | 0.5431      | 0.0064      
+-----------------------------------------------------------------------------------------------------------------------------
+Overall Avg.                     | 0.8586      | 0.9395      | 0.7798       | 0.7732      | 0.7839      | 0.4959      
+=============================================================================================================================
+  Speech Quality & Fidelity Degradation (Clean VC vs. Watermarked VC):
+-----------------------------------------------------------------------------------------------------------------------------
+Metric                       | Clean VC     | Watermarked  | Delta (WM - Clean)
+-----------------------------------------------------------------------------------------------------------------------------
+PESQ (WB 16kHz)              | N/A (Ref)    | 3.8791       | -                 
+STOI (Intelligibility)       | 1.0000       | 0.9996       |      -0.0004
+SNR (dB, Signal-to-Noise)    | N/A (Ref)    | 21.29        dB | -                 
+SIM (Speaker Cosine Sim)     | 0.6419       | 0.6393       |      -0.0026
+-----------------------------------------------------------------------------------------------------------------------------
+  Efficiency & Computational Latency:
+-----------------------------------------------------------------------------------------------------------------------------
+Embedding Overhead (ms/s)    | 492.55       ms per second of audio
+Detection Latency (ms/s)     | 16.51        ms per second of audio
+=============================================================================================================================
+
+====================================================================================================
+[Done] Benchmark complete in 73.91 minutes.
+Report written to:       /home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/validation_report.txt
+Summary JSON written to: /home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/eval_summary.json
+Sample WAVs saved in:    /home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios
+====================================================================================================
+================================================================================
+  MeanVC2 + AudioSeal 1,000-Sample Benchmark Job Finished: 2026年  9月 17日 木曜日 09:02:21 JST
+================================================================================

@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Large Model Weights and Checkpoints (exceeds GitHub 100MB limit)
+ckpts/
+preprocess/ckpts/
+
+# Temporary generated test audio
+watermarked_output.wav
+watermarked_*.wav
+*.wav.tmp
+audioseal/exp/**/synthesized_audios/
+audioseal/exp/**/tmp_parts/
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store

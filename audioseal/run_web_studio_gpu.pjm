@@ -1,0 +1,45 @@
+#!/bin/bash
+#PJM -L rscgrp=b-batch
+#PJM -L gpu=1
+#PJM -L elapse=02:00:00
+#PJM -L jobenv=singularity
+#PJM -o logs/web_studio_gpu_%j.out
+#PJM -e logs/web_studio_gpu_%j.err
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+mkdir -p logs
+
+module load singularity-ce
+
+SIF="${SIF:-/home/pj25001109/ku60000344/latest.sif}"
+PYTHON_BIN="/home/pj25001109/ku60000344/miniconda3/envs/meanvc/bin/python"
+
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+export PYTHONUNBUFFERED=1
+export NO_TORCH_COMPILE=1
+
+NODE_IP=$(hostname -I | awk '{print $1}')
+echo "================================================================================"
+echo "  MeanVC2 + AudioSeal Real-Time Web Studio (H100 GPU Accelerated)"
+echo "================================================================================"
+echo "Compute Node:  $(hostname)"
+echo "Node IP:       $NODE_IP"
+echo "Port:          8998"
+echo "SIF Image:     $SIF"
+echo "--------------------------------------------------------------------------------"
+echo "[Action Required] Run this command on your local laptop terminal:"
+echo "   ssh -L 8998:$NODE_IP:8998 ku60000344@genkai.cc.kyushu-u.ac.jp"
+echo ""
+echo "Then open Chrome or Edge on your laptop:"
+echo "   http://localhost:8998"
+echo "================================================================================"
+
+singularity exec --nv --bind /home/pj25001109/ku60000344 "$SIF" \
+  "$PYTHON_BIN" "${SCRIPT_DIR}/server_realtime_web.py" \
+    --host 0.0.0.0 \
+    --port 8998 \
+    --device cuda \
+    --model 40ms

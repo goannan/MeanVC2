@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MeanVC2 + AudioSeal Real-Time Voice Conversion and Streaming Neural Audio Watermark Studio">
+    <title>MeanVC2 & AudioSeal Real-Time Streaming Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
+
+    <main class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 5v14M7 9v6M22 8v8M2 11v2"/>
+                    </svg>
+                </div>
+                <div class="header-title">
+                    <h1>MeanVC2 + AudioSeal Real-Time Studio</h1>
+                    <p class="subtitle">Zero-Lookahead Voice Conversion · Streaming Neural Watermarking & Extraction</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div id="ws-status-badge" class="status-badge disconnected">
+                    <span class="status-dot"></span>
+                    <span id="ws-status-text">Disconnected</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Top Control Bar -->
+        <section class="control-panel glass-panel">
+            <div class="control-group">
+                <button id="btn-mic-toggle" class="btn-primary" aria-label="Toggle Microphone Stream">
+                    <span class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            <line x1="12" y1="19" x2="12" y2="23"/>
+                            <line x1="8" y1="23" x2="16" y2="23"/>
+                        </svg>
+                    </span>
+                    <span id="mic-btn-label">Start Microphone</span>
+                </button>
+            </div>
+
+            <div class="control-group">
+                <label for="select-chunk-size">Streaming Buffer Step:</label>
+                <select id="select-chunk-size" class="custom-select" aria-label="Streaming Buffer Step">
+                    <option value="2560" selected>160ms (CPU Smooth · Recommended)</option>
+                    <option value="1280">80ms (Balanced)</option>
+                    <option value="640">40ms (Ultra-Low Latency · GPU)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="select-target-spk">Target Speaker Timbre:</label>
+                <select id="select-target-spk" class="custom-select" aria-label="Target Speaker Timbre">
+                    <option value="libritts_female_150" selected>LibriTTS Female (Spk 150 · Warm)</option>
+                    <option value="libritts_female_19">LibriTTS Female (Spk 19 · Clear)</option>
+                    <option value="default_male">CommonVoice Male (Default)</option>
+                    <option value="libritts_male_1081">LibriTTS Male (Spk 1081 · Deep)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="slider-wm-strength">Watermark Strength (&alpha;): <span id="wm-strength-val">0.50</span></label>
+                <input type="range" id="slider-wm-strength" min="0.1" max="1.5" step="0.05" value="0.5" class="custom-slider" aria-label="Watermark Strength">
+            </div>
+
+            <div class="control-group">
+                <label for="slider-out-volume">Monitor Volume: <span id="out-volume-val">100%</span></label>
+                <input type="range" id="slider-out-volume" min="0" max="1" step="0.05" value="1.0" class="custom-slider" aria-label="Output Volume">
+            </div>
+        </section>
+
+        <!-- Waveform & Realtime Audio Visualization -->
+        <section class="visualizer-panel glass-panel">
+            <div class="panel-header">
+                <h2>Real-Time Waveform & Spectral Oscilloscope</h2>
+                <div class="legend-tags">
+                    <span class="tag tag-input">● Microphone Input</span>
+                    <span class="tag tag-output">● Converted + Watermarked Output</span>
+                </div>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="canvas-visualizer" width="960" height="180"></canvas>
+            </div>
+        </section>
+
+        <!-- Security Dashboard: 16-Bit Watermark Real-Time Extraction -->
+        <section class="watermark-dashboard glass-panel">
+            <div class="panel-header">
+                <h2>AudioSeal Streaming Watermark Security Monitor</h2>
+                <div class="security-meta">
+                    <span>Payload: 16-bit Secret Key</span>
+                    <span class="badge-causal">Strictly Causal · Zero Lookahead</span>
+                </div>
+            </div>
+
+            <!-- Bit Match Matrix -->
+            <div class="bit-matrix-wrapper">
+                <div class="matrix-row">
+                    <span class="matrix-label">Target Payload (16-bit):</span>
+                    <div id="target-bits-container" class="bits-container">
+                        <!-- 16 bit boxes generated dynamically -->
+                    </div>
+                </div>
+                <div class="matrix-row">
+                    <span class="matrix-label">Extracted Payload (Live):</span>
+                    <div id="extracted-bits-container" class="bits-container">
+                        <!-- 16 bit boxes generated dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meters Grid -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-title">Detection Confidence</div>
+                    <div class="metric-value-wrapper">
+                        <span id="val-detect-prob" class="metric-value">--</span>
+                        <span class="metric-unit">%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div id="bar-detect-prob" class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="metric-footnote">Threshold: &gt; 50% indicates watermark presence</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-title">Bit Accuracy (16-bit Key)</div>
+                    <div class="metric-value-wrapper">
+                        <span id="val-bit-acc" class="metric-value">--</span>
+                        <span class="metric-unit">%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div id="bar-bit-acc" class="progress-bar-fill success" style="width: 0%"></div>
+                    </div>
+                    <div class="metric-footnote">Strict bit-by-bit match rate</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-title">Streaming Latency (GPU)</div>
+                    <div class="metric-value-wrapper">
+                        <span id="val-proc-latency" class="metric-value">--</span>
+                        <span class="metric-unit">ms</span>
+                    </div>
+                    <div class="metric-subinfo">
+                        <span>Chunk Step: <strong id="val-chunk-ms">40</strong>ms</span>
+                        <span>Lookahead: <strong>40</strong>ms</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-title">Real-Time Factor (RTF)</div>
+                    <div class="metric-value-wrapper">
+                        <span id="val-rtf" class="metric-value">--</span>
+                    </div>
+                    <div class="metric-subinfo">
+                        <span>Processed Chunks: <strong id="val-chunk-count">0</strong></span>
+                        <span id="status-rtf-pill" class="badge-pill ok">RT Steady</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pipeline Diagnostics & Log -->
+        <section class="log-panel glass-panel">
+            <div class="panel-header">
+                <h2>Pipeline Diagnostics & Event Log</h2>
+                <button id="btn-clear-log" class="btn-subtle" aria-label="Clear Event Log">Clear</button>
+            </div>
+            <div id="log-terminal" class="log-terminal" role="log" aria-live="polite">
+                <div class="log-entry system">[System] Welcome to MeanVC2 + AudioSeal Real-Time Studio.</div>
+                <div class="log-entry system">[System] Ready. Click 'Start Microphone' above to begin real-time streaming.</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

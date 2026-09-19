@@ -1,0 +1,49 @@
+================================================================================
+  MeanVC2 + AudioSeal Real-Time Web Studio (H100 GPU Accelerated)
+================================================================================
+Compute Node:  b0038
+Node IP:       172.16.17.38
+Port:          8998
+SIF Image:     /home/pj25001109/ku60000344/latest.sif
+--------------------------------------------------------------------------------
+[Action Required] Run this command on your local laptop terminal:
+   ssh -L 8998:172.16.17.38:8998 ku60000344@genkai.cc.kyushu-u.ac.jp
+
+Then open Chrome or Edge on your laptop:
+   http://localhost:8998
+================================================================================
+============================================================
+MeanVC2 + AudioSeal Real-Time Web Studio
+  URL:    http://0.0.0.0:8998
+  Device: cuda
+  Model:  40ms
+  Target: /home/pj25001109/ku60000344/projects/MeanVC2/test_audio/common_voice_en_10119832.wav
+============================================================
+[Instructions for Local Laptop Browser & Microphone]:
+  1. Run this SSH command on your local computer:
+     ssh -L 8998:localhost:8998 <user>@<server>
+  2. Open this link in Chrome or Edge:
+     http://localhost:8998
+============================================================
+[Init] Loading PyTorch and NumPy...
+[Init] Loading MeanVC2 runtime and speaker module...
+[Init] Loading AudioSeal stream watermarker...
+[Init 1/3] Loading MeanVC2 (40ms) on cuda...
+[Init] Loading ASR encoder (JIT)...
+[Init] Loading VC model...
+[VC] Total parameters: 17,748,688
+[Init] Loading vocoder...
+[Init] Loading speaker model...
+[Init] Extracting target speaker embedding from: /home/pj25001109/ku60000344/projects/MeanVC2/test_audio/common_voice_en_10119832.wav
+[Init] Speaker embedding shape: torch.Size([1, 256])
+[Init 2/3] Precomputing target speaker embeddings & GTM KVs...
+  -> Cached [default_male]: CommonVoice Male (Default)
+  -> Cached [libritts_female_150]: LibriTTS Female (Spk 150 · Warm)
+  -> Cached [libritts_female_19]: LibriTTS Female (Spk 19 · Clear)
+  -> Cached [libritts_male_1081]: LibriTTS Male (Spk 1081 · Deep)
+[Init 3/3] Loading AudioSeal streaming watermarker on cuda...
+[AudioSeal] Loading streaming generator: audioseal_wm_streaming on cuda...
+[AudioSeal] Loading streaming detector: audioseal_detector_streaming on cuda...
+[Ready] Pipeline active on cuda. Ready for live streaming.
+======== Running on http://0.0.0.0:8998 ========
+(Press CTRL+C to quit)

@@ -1,0 +1,653 @@
+{
+    "model": "40ms",
+    "alpha": 1.0,
+    "device": "cuda",
+    "target_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/test_audio/common_voice_en_10119832.wav",
+    "num_evaluated_samples": 1000,
+    "total_runtime_seconds": 4434.89,
+    "overall_quality_metrics": {
+        "pesq": 3.8791143715381624,
+        "stoi": 0.9996051727505442,
+        "snr": 21.28656143951416,
+        "clean_sim": 0.6418821449130774,
+        "wm_sim": 0.6393038376867771,
+        "embed_overhead_ms_per_sec": 492.547292931315,
+        "detect_latency_ms_per_sec": 16.508883535136476
+    },
+    "robustness_summary": {
+        "Clean (Identity)": {
+            "category": "DSP",
+            "family": "Clean (Identity)",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 1.0,
+            "wm_roc_auc": 1.0,
+            "wm_tpr_at_001_fpr": 1.0
+        },
+        "Gaussian Noise": {
+            "category": "DSP",
+            "family": "Gaussian Noise",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 1.0,
+            "wm_roc_auc": 1.0,
+            "wm_tpr_at_001_fpr": 1.0
+        },
+        "Pink Noise": {
+            "category": "DSP",
+            "family": "Pink Noise",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 1.0,
+            "wm_roc_auc": 1.0,
+            "wm_tpr_at_001_fpr": 1.0
+        },
+        "Lowpass Filter (5k)": {
+            "category": "DSP",
+            "family": "Lowpass Filter (5k)",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 1.0,
+            "wm_roc_auc": 1.0,
+            "wm_tpr_at_001_fpr": 1.0
+        },
+        "Highpass Filter (500)": {
+            "category": "DSP",
+            "family": "Highpass Filter (500)",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 1.0,
+            "wm_roc_auc": 1.0,
+            "wm_tpr_at_001_fpr": 1.0
+        },
+        "Bandpass Filter": {
+            "category": "DSP",
+            "family": "Bandpass Filter",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 1.0,
+            "wm_roc_auc": 1.0,
+            "wm_tpr_at_001_fpr": 1.0
+        },
+        "Echo/Reverb": {
+            "category": "DSP",
+            "family": "Echo/Reverb",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 1.0,
+            "wm_roc_auc": 1.0,
+            "wm_tpr_at_001_fpr": 1.0
+        },
+        "Smooth (Moving Avg)": {
+            "category": "DSP",
+            "family": "Smooth (Moving Avg)",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 0.906625,
+            "wm_roc_auc": 0.9612704185731612,
+            "wm_tpr_at_001_fpr": 0.3444009594748138
+        },
+        "Resampling (32k-16k)": {
+            "category": "DSP",
+            "family": "Resampling (32k-16k)",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 1.0,
+            "wm_roc_auc": 1.0,
+            "wm_tpr_at_001_fpr": 1.0
+        },
+        "Volume Boost (+10%)": {
+            "category": "DSP",
+            "family": "Volume Boost (+10%)",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 1.0,
+            "wm_roc_auc": 1.0,
+            "wm_tpr_at_001_fpr": 1.0
+        },
+        "Volume Duck (-10%)": {
+            "category": "DSP",
+            "family": "Volume Duck (-10%)",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 1.0,
+            "wm_roc_auc": 1.0,
+            "wm_tpr_at_001_fpr": 1.0
+        },
+        "Speed (0.8x-1.2x)": {
+            "category": "DSP",
+            "family": "Speed (0.8x-1.2x)",
+            "bitrate": "",
+            "detect_acc": 1.0,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 0.5710625,
+            "wm_roc_auc": 0.6125219570239654,
+            "wm_tpr_at_001_fpr": 0.01224592854437571
+        },
+        "Encodec 3 kbps": {
+            "category": "Codec",
+            "family": "Encodec",
+            "bitrate": "3 kbps",
+            "detect_acc": 0.9785,
+            "det_roc_auc": 0.9996780000000001,
+            "det_tpr_at_001_fpr": 0.99,
+            "bit_acc": 0.5169375,
+            "wm_roc_auc": 0.529611145361847,
+            "wm_tpr_at_001_fpr": 0.0013887135462694105
+        },
+        "Encodec 6 kbps": {
+            "category": "Codec",
+            "family": "Encodec",
+            "bitrate": "6 kbps",
+            "detect_acc": 0.9985,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 0.5320625,
+            "wm_roc_auc": 0.5466508148083628,
+            "wm_tpr_at_001_fpr": 0.008458527963640954
+        },
+        "Encodec 12 kbps": {
+            "category": "Codec",
+            "family": "Encodec",
+            "bitrate": "12 kbps",
+            "detect_acc": 0.9995,
+            "det_roc_auc": 1.0,
+            "det_tpr_at_001_fpr": 1.0,
+            "bit_acc": 0.53625,
+            "wm_roc_auc": 0.562014602080181,
+            "wm_tpr_at_001_fpr": 0.013255902032571645
+        },
+        "DAC 6 kbps": {
+            "category": "Codec",
+            "family": "DAC",
+            "bitrate": "6 kbps",
+            "detect_acc": 0.5,
+            "det_roc_auc": 0.790882,
+            "det_tpr_at_001_fpr": 0.002,
+            "bit_acc": 0.4991875,
+            "wm_roc_auc": 0.5027793491549699,
+            "wm_tpr_at_001_fpr": 0.0022724403484408536
+        },
+        "DAC 8 kbps": {
+            "category": "Codec",
+            "family": "DAC",
+            "bitrate": "8 kbps",
+            "detect_acc": 0.5,
+            "det_roc_auc": 0.9750019999999999,
+            "det_tpr_at_001_fpr": 0.505,
+            "bit_acc": 0.657125,
+            "wm_roc_auc": 0.7231062094664575,
+            "wm_tpr_at_001_fpr": 0.02714303749526575
+        },
+        "DAC 24 kbps": {
+            "category": "Codec",
+            "family": "DAC",
+            "bitrate": "24 kbps",
+            "detect_acc": 0.555,
+            "det_roc_auc": 0.9961420000000001,
+            "det_tpr_at_001_fpr": 0.874,
+            "bit_acc": 0.5050625,
+            "wm_roc_auc": 0.5151139738486061,
+            "wm_tpr_at_001_fpr": 0.0005049867440979674
+        },
+        "SNAC 0.98 kbps": {
+            "category": "Codec",
+            "family": "SNAC",
+            "bitrate": "0.98 kbps",
+            "detect_acc": 0.5,
+            "det_roc_auc": 0.6266809999999999,
+            "det_tpr_at_001_fpr": 0.001,
+            "bit_acc": 0.5031875,
+            "wm_roc_auc": 0.5004367222747456,
+            "wm_tpr_at_001_fpr": 0.0013887135462694105
+        },
+        "SNAC 1.9 kbps": {
+            "category": "Codec",
+            "family": "SNAC",
+            "bitrate": "1.9 kbps",
+            "detect_acc": 0.5,
+            "det_roc_auc": 0.660511,
+            "det_tpr_at_001_fpr": 0.0,
+            "bit_acc": 0.5,
+            "wm_roc_auc": 0.5009660785827568,
+            "wm_tpr_at_001_fpr": 0.0011362201742204268
+        },
+        "SNAC 2.6 kbps": {
+            "category": "Codec",
+            "family": "SNAC",
+            "bitrate": "2.6 kbps",
+            "detect_acc": 0.5,
+            "det_roc_auc": 0.6799569999999999,
+            "det_tpr_at_001_fpr": 0.004,
+            "bit_acc": 0.509625,
+            "wm_roc_auc": 0.5073984089604738,
+            "wm_tpr_at_001_fpr": 0.001641206918318394
+        }
+    },
+    "saved_audios_count": 50,
+    "saved_audios": [
+        {
+            "sample_idx": 1,
+            "cut_id": "7226_86964_000015_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0001_7226_86964_000015_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0001_7226_86964_000015_000000_wm.wav",
+            "duration": 8.71,
+            "watermark_hex": "1010100011011111"
+        },
+        {
+            "sample_idx": 2,
+            "cut_id": "83_9960_000075_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0002_83_9960_000075_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0002_83_9960_000075_000000_wm.wav",
+            "duration": 3.4000625,
+            "watermark_hex": "0010100010110010"
+        },
+        {
+            "sample_idx": 3,
+            "cut_id": "5022_29411_000002_000006",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0003_5022_29411_000002_000006_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0003_5022_29411_000002_000006_wm.wav",
+            "duration": 6.21,
+            "watermark_hex": "0111001110100100"
+        },
+        {
+            "sample_idx": 4,
+            "cut_id": "6818_76332_000022_000002",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0004_6818_76332_000022_000002_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0004_6818_76332_000022_000002_wm.wav",
+            "duration": 7.15,
+            "watermark_hex": "1100001110010001"
+        },
+        {
+            "sample_idx": 5,
+            "cut_id": "1743_142913_000032_000001",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0005_1743_142913_000032_000001_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0005_1743_142913_000032_000001_wm.wav",
+            "duration": 2.33,
+            "watermark_hex": "0000110111100100"
+        },
+        {
+            "sample_idx": 6,
+            "cut_id": "150_126112_000004_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0006_150_126112_000004_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0006_150_126112_000004_000000_wm.wav",
+            "duration": 2.17,
+            "watermark_hex": "1110001010101101"
+        },
+        {
+            "sample_idx": 7,
+            "cut_id": "7447_91187_000014_000001",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0007_7447_91187_000014_000001_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0007_7447_91187_000014_000001_wm.wav",
+            "duration": 9.83,
+            "watermark_hex": "1100100100010010"
+        },
+        {
+            "sample_idx": 8,
+            "cut_id": "7178_34644_000044_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0008_7178_34644_000044_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0008_7178_34644_000044_000000_wm.wav",
+            "duration": 5.61,
+            "watermark_hex": "1111000000010110"
+        },
+        {
+            "sample_idx": 9,
+            "cut_id": "8770_295462_000042_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0009_8770_295462_000042_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0009_8770_295462_000042_000000_wm.wav",
+            "duration": 8.19,
+            "watermark_hex": "1000010011011010"
+        },
+        {
+            "sample_idx": 10,
+            "cut_id": "1841_159771_000044_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0010_1841_159771_000044_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0010_1841_159771_000044_000000_wm.wav",
+            "duration": 5.84,
+            "watermark_hex": "1010100110001110"
+        },
+        {
+            "sample_idx": 11,
+            "cut_id": "5022_29405_000054_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0011_5022_29405_000054_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0011_5022_29405_000054_000000_wm.wav",
+            "duration": 4.2000625,
+            "watermark_hex": "0001101011010000"
+        },
+        {
+            "sample_idx": 12,
+            "cut_id": "5022_29405_000105_000001",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0012_5022_29405_000105_000001_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0012_5022_29405_000105_000001_wm.wav",
+            "duration": 3.48,
+            "watermark_hex": "1111001000111010"
+        },
+        {
+            "sample_idx": 13,
+            "cut_id": "1334_135589_000055_000005",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0013_1334_135589_000055_000005_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0013_1334_135589_000055_000005_wm.wav",
+            "duration": 7.5200625,
+            "watermark_hex": "1010111111001101"
+        },
+        {
+            "sample_idx": 14,
+            "cut_id": "374_180299_000003_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0014_374_180299_000003_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0014_374_180299_000003_000000_wm.wav",
+            "duration": 4.5,
+            "watermark_hex": "1000000010110000"
+        },
+        {
+            "sample_idx": 15,
+            "cut_id": "5678_43303_000017_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0015_5678_43303_000017_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0015_5678_43303_000017_000000_wm.wav",
+            "duration": 4.98,
+            "watermark_hex": "0011010010000000"
+        },
+        {
+            "sample_idx": 16,
+            "cut_id": "460_172357_000004_000003",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0016_460_172357_000004_000003_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0016_460_172357_000004_000003_wm.wav",
+            "duration": 2.84,
+            "watermark_hex": "0111100001111010"
+        },
+        {
+            "sample_idx": 17,
+            "cut_id": "1098_133695_000013_000010",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0017_1098_133695_000013_000010_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0017_1098_133695_000013_000010_wm.wav",
+            "duration": 9.66,
+            "watermark_hex": "0000100010111111"
+        },
+        {
+            "sample_idx": 18,
+            "cut_id": "7178_34645_000030_000001",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0018_7178_34645_000030_000001_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0018_7178_34645_000030_000001_wm.wav",
+            "duration": 2.6300625,
+            "watermark_hex": "1011110001001110"
+        },
+        {
+            "sample_idx": 19,
+            "cut_id": "3830_12535_000015_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0019_3830_12535_000015_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0019_3830_12535_000015_000000_wm.wav",
+            "duration": 5.07,
+            "watermark_hex": "0000100101000011"
+        },
+        {
+            "sample_idx": 20,
+            "cut_id": "696_93314_000045_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0020_696_93314_000045_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0020_696_93314_000045_000000_wm.wav",
+            "duration": 2.75,
+            "watermark_hex": "0011110001001011"
+        },
+        {
+            "sample_idx": 21,
+            "cut_id": "6529_62554_000046_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0021_6529_62554_000046_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0021_6529_62554_000046_000000_wm.wav",
+            "duration": 3.85,
+            "watermark_hex": "1011111001111101"
+        },
+        {
+            "sample_idx": 22,
+            "cut_id": "4362_15663_000028_000001",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0022_4362_15663_000028_000001_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0022_4362_15663_000028_000001_wm.wav",
+            "duration": 4.89,
+            "watermark_hex": "0010111010010011"
+        },
+        {
+            "sample_idx": 23,
+            "cut_id": "5390_30096_000006_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0023_5390_30096_000006_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0023_5390_30096_000006_000000_wm.wav",
+            "duration": 2.92,
+            "watermark_hex": "0111110010011100"
+        },
+        {
+            "sample_idx": 24,
+            "cut_id": "2817_142380_000020_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0024_2817_142380_000020_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0024_2817_142380_000020_000000_wm.wav",
+            "duration": 3.21,
+            "watermark_hex": "0111011100111111"
+        },
+        {
+            "sample_idx": 25,
+            "cut_id": "6818_68772_000035_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0025_6818_68772_000035_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0025_6818_68772_000035_000000_wm.wav",
+            "duration": 5.26,
+            "watermark_hex": "1110111101011111"
+        },
+        {
+            "sample_idx": 26,
+            "cut_id": "1867_154071_000029_000001",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0026_1867_154071_000029_000001_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0026_1867_154071_000029_000001_wm.wav",
+            "duration": 2.47,
+            "watermark_hex": "1101101110011100"
+        },
+        {
+            "sample_idx": 27,
+            "cut_id": "1334_135589_000078_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0027_1334_135589_000078_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0027_1334_135589_000078_000000_wm.wav",
+            "duration": 6.34,
+            "watermark_hex": "0011011110001010"
+        },
+        {
+            "sample_idx": 28,
+            "cut_id": "6818_68772_000009_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0028_6818_68772_000009_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0028_6818_68772_000009_000000_wm.wav",
+            "duration": 9.56,
+            "watermark_hex": "1011111101100111"
+        },
+        {
+            "sample_idx": 29,
+            "cut_id": "8419_293473_000018_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0029_8419_293473_000018_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0029_8419_293473_000018_000000_wm.wav",
+            "duration": 3.38,
+            "watermark_hex": "0000110010011001"
+        },
+        {
+            "sample_idx": 30,
+            "cut_id": "6454_107462_000008_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0030_6454_107462_000008_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0030_6454_107462_000008_000000_wm.wav",
+            "duration": 2.73,
+            "watermark_hex": "1100000001100001"
+        },
+        {
+            "sample_idx": 31,
+            "cut_id": "6081_42010_000017_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0031_6081_42010_000017_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0031_6081_42010_000017_000000_wm.wav",
+            "duration": 2.6,
+            "watermark_hex": "0111010100001111"
+        },
+        {
+            "sample_idx": 32,
+            "cut_id": "4267_287369_000033_000001",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0032_4267_287369_000033_000001_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0032_4267_287369_000033_000001_wm.wav",
+            "duration": 3.2,
+            "watermark_hex": "1110010001101110"
+        },
+        {
+            "sample_idx": 33,
+            "cut_id": "6415_100596_000023_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0033_6415_100596_000023_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0033_6415_100596_000023_000000_wm.wav",
+            "duration": 4.35,
+            "watermark_hex": "0100111001000011"
+        },
+        {
+            "sample_idx": 34,
+            "cut_id": "8580_287364_000032_000002",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0034_8580_287364_000032_000002_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0034_8580_287364_000032_000002_wm.wav",
+            "duration": 9.26,
+            "watermark_hex": "0010110101001110"
+        },
+        {
+            "sample_idx": 35,
+            "cut_id": "6272_70171_000020_000006",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0035_6272_70171_000020_000006_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0035_6272_70171_000020_000006_wm.wav",
+            "duration": 2.83,
+            "watermark_hex": "1001011110111111"
+        },
+        {
+            "sample_idx": 36,
+            "cut_id": "7302_86814_000046_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0036_7302_86814_000046_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0036_7302_86814_000046_000000_wm.wav",
+            "duration": 4.98,
+            "watermark_hex": "1000101110110100"
+        },
+        {
+            "sample_idx": 37,
+            "cut_id": "4340_15220_000048_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0037_4340_15220_000048_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0037_4340_15220_000048_000000_wm.wav",
+            "duration": 2.79,
+            "watermark_hex": "0011101010010101"
+        },
+        {
+            "sample_idx": 38,
+            "cut_id": "5652_19215_000026_000019",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0038_5652_19215_000026_000019_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0038_5652_19215_000026_000019_wm.wav",
+            "duration": 2.6400625,
+            "watermark_hex": "1100100011010001"
+        },
+        {
+            "sample_idx": 39,
+            "cut_id": "8580_287363_000019_000001",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0039_8580_287363_000019_000001_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0039_8580_287363_000019_000001_wm.wav",
+            "duration": 5.45,
+            "watermark_hex": "0100101001110000"
+        },
+        {
+            "sample_idx": 40,
+            "cut_id": "5750_100289_000028_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0040_5750_100289_000028_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0040_5750_100289_000028_000000_wm.wav",
+            "duration": 7.4200625,
+            "watermark_hex": "0101110110100011"
+        },
+        {
+            "sample_idx": 41,
+            "cut_id": "4214_7146_000022_000002",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0041_4214_7146_000022_000002_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0041_4214_7146_000022_000002_wm.wav",
+            "duration": 3.32,
+            "watermark_hex": "0011101101110101"
+        },
+        {
+            "sample_idx": 42,
+            "cut_id": "5339_14134_000055_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0042_5339_14134_000055_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0042_5339_14134_000055_000000_wm.wav",
+            "duration": 5.5100625,
+            "watermark_hex": "0010000100110110"
+        },
+        {
+            "sample_idx": 43,
+            "cut_id": "3607_29116_000046_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0043_3607_29116_000046_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0043_3607_29116_000046_000000_wm.wav",
+            "duration": 9.62,
+            "watermark_hex": "0010101101111011"
+        },
+        {
+            "sample_idx": 44,
+            "cut_id": "4640_19188_000010_000002",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0044_4640_19188_000010_000002_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0044_4640_19188_000010_000002_wm.wav",
+            "duration": 5.2,
+            "watermark_hex": "1101000010100010"
+        },
+        {
+            "sample_idx": 45,
+            "cut_id": "1926_147979_000019_000000",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0045_1926_147979_000019_000000_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0045_1926_147979_000019_000000_wm.wav",
+            "duration": 2.68,
+            "watermark_hex": "0000000100110001"
+        },
+        {
+            "sample_idx": 46,
+            "cut_id": "2136_5147_000056_000004",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0046_2136_5147_000056_000004_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0046_2136_5147_000056_000004_wm.wav",
+            "duration": 3.0700625,
+            "watermark_hex": "0110101101110000"
+        },
+        {
+            "sample_idx": 47,
+            "cut_id": "4640_19187_000006_000002",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0047_4640_19187_000006_000002_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0047_4640_19187_000006_000002_wm.wav",
+            "duration": 3.18,
+            "watermark_hex": "0010111101011101"
+        },
+        {
+            "sample_idx": 48,
+            "cut_id": "8108_280354_000014_000001",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0048_8108_280354_000014_000001_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0048_8108_280354_000014_000001_wm.wav",
+            "duration": 7.42,
+            "watermark_hex": "1000010000010100"
+        },
+        {
+            "sample_idx": 49,
+            "cut_id": "5322_7678_000007_000002",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0049_5322_7678_000007_000002_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0049_5322_7678_000007_000002_wm.wav",
+            "duration": 6.5699375,
+            "watermark_hex": "0001110111000111"
+        },
+        {
+            "sample_idx": 50,
+            "cut_id": "6147_34607_000010_000001",
+            "clean_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0050_6147_34607_000010_000001_clean.wav",
+            "wm_wav": "/home/pj25001109/ku60000344/projects/MeanVC2/audioseal/exp/eval_meanvc_1000/synthesized_audios/sample_0050_6147_34607_000010_000001_wm.wav",
+            "duration": 2.06,
+            "watermark_hex": "0011110011111010"
+        }
+    ]
+}

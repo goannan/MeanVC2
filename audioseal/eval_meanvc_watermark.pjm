@@ -1,0 +1,47 @@
+#!/bin/bash
+#PJM -L rscgrp=b-batch
+#PJM -L gpu=1
+#PJM -L elapse=04:00:00
+#PJM -L jobenv=singularity
+#PJM -o logs/eval_meanvc_1000_%j.out
+#PJM -e logs/eval_meanvc_1000_%j.err
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+
+mkdir -p logs exp/eval_meanvc_1000
+
+module load singularity-ce
+
+SIF="${SIF:-/home/pj25001109/ku60000344/latest.sif}"
+PYTHON_BIN="/home/pj25001109/ku60000344/miniconda3/envs/meanvc/bin/python"
+
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+export PYTHONUNBUFFERED=1
+export NO_TORCH_COMPILE=1
+
+echo "================================================================================"
+echo "  MeanVC2 + AudioSeal 1,000-Sample Benchmark Job Started: $(date)"
+echo "================================================================================"
+echo "Job ID:            ${PJM_JOBID:-Local}"
+echo "Node:              $(hostname)"
+echo "Directory:         $SCRIPT_DIR"
+echo "SIF Image:         $SIF"
+echo "Python:            $PYTHON_BIN"
+echo "================================================================================"
+
+singularity exec --nv --bind /home/pj25001109/ku60000344 "$SIF" \
+  "$PYTHON_BIN" "${SCRIPT_DIR}/eval_meanvc_watermark.py" \
+    --libritts-dir /home/pj25001109/ku60000344/dataset/libriTTS/LibriTTS/train-clean-100 \
+    --num-samples 1000 \
+    --model 40ms \
+    --device cuda \
+    --output-dir exp/eval_meanvc_1000 \
+    --save-audio-count 50 \
+    "$@"
+
+echo "================================================================================"
+echo "  MeanVC2 + AudioSeal 1,000-Sample Benchmark Job Finished: $(date)"
+echo "================================================================================"

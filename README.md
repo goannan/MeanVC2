@@ -58,6 +58,7 @@ MeanVC2 supports **speaker-specific fine-tuning**: using the provided training s
 - **Mean Flows + 1-NFE inference**: Single-step ODE solving for high-quality mel-spectrogram synthesis, balancing efficiency and fidelity.
 - **Lightweight yet powerful**: Only 18M parameters — comparable to MeanVC (14M) and far smaller than competing streaming VC systems.
 - **End-to-end & streaming-ready**: Supports both file-based conversion and real-time microphone streaming with pre-extracted or on-the-fly features.
+- **Integrated Neural Watermarking (AudioSeal)**: Seamless strictly causal 16-bit watermark embedding and live extraction with a modern interactive Web Studio (see [audioseal/README.md](audioseal/README.md)).
 
 ## 🚀 Quick Start
 

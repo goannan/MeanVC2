@@ -1,0 +1,47 @@
+#!/bin/bash
+#PJM -L rscgrp=b-batch
+#PJM -L gpu=4
+#PJM -L elapse=02:00:00
+#PJM -L jobenv=singularity
+#PJM -o logs/eval_audioseal_crop_attacks_%j.out
+#PJM -e logs/eval_audioseal_crop_attacks_%j.err
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+
+mkdir -p logs exp/eval_audioseal_crop_attacks
+
+module load singularity-ce
+
+SIF="${SIF:-$HOME/latest.sif}"
+
+echo "================================================================================"
+echo "  AudioSeal Streaming Robustness Benchmark Job Started: $(date)"
+echo "================================================================================"
+echo "Job ID:            ${PJM_JOBID:-Local}"
+echo "Node:              $(hostname)"
+echo "Directory:         $SCRIPT_DIR"
+echo "SIF Image:         $SIF"
+echo "Target Dataset:    LibriTTS test-clean (1000 samples)"
+echo "VC Model:          MeanVC2 160ms (120ms lookahead / 160ms chunk)"
+echo "Cropping Eval:     1, 2, 5, 10, 20 frames"
+echo "Attack Eval:       20 frames (21 DSP & Neural Codec attacks)"
+echo "================================================================================"
+
+singularity exec --nv --bind "$HOME" "$SIF" bash "${SCRIPT_DIR}/eval_audioseal_crop_attacks.sh" \
+  --libritts-dir /home/pj25001109/ku60000344/dataset/libriTTS/LibriTTS/test-clean \
+  --num-samples 1000 \
+  --model 120ms \
+  --chunk-ms 160 \
+  --crop-frames 1 2 5 10 20 \
+  --attack-crop-frames 20 \
+  --device cuda \
+  --output-dir exp/eval_audioseal_crop_attacks \
+  --save-audio-count 50 \
+  "$@"
+
+echo "================================================================================"
+echo "  AudioSeal Streaming Robustness Benchmark Job Finished: $(date)"
+echo "================================================================================"
